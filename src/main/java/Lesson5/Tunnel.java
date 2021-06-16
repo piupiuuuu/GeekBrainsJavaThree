@@ -2,12 +2,14 @@ package Lesson5;
 
 import java.util.concurrent.Semaphore;
 
+import static Lesson5.MainApp.CARS_COUNT;
+
 // тоннель
 public class Tunnel extends Stage {
     private final Semaphore semaphore;
 
     public Tunnel() {
-        this.semaphore = new Semaphore(2); // 2 разрешения для доступа к ресурсу одновременно
+        this.semaphore = new Semaphore(CARS_COUNT/2); // 2 разрешения для доступа к ресурсу одновременно
         this.length = 80;
         this.description = "Тоннель " + length + " метров";
     }
